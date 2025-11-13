@@ -1,0 +1,14 @@
+body {
+    background-color: grey;
+}
+
+main {
+    min-height: 80vh;
+}
+
+footer {
+    padding: 12px 0;
+    background-color: antiquewhite;
+    color: azure;
+    text-align: center;
+}
