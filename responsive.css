@@ -1,0 +1,24 @@
+
+    /*Header*/
+    header {
+      flex-direction: column;
+      height: max-content;
+      padding: 2%;
+  }
+
+  /* ! */
+  .header-left-side { 
+      display: none;
+  }
+
+  .header-right-side {
+      /* ! */
+      width: 100%;
+  }
+  .center-row {
+        /* ! */
+  align-items: flex-start flex-end;
+  }
+  /* ! */
+  
+  

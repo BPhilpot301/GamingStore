@@ -1,0 +1,42 @@
+header {
+    background-color: var(--primary-color);
+    height: 60px;
+    position:sticky;
+    top: 0px;
+}
+
+
+/*Right Side*/
+nav {
+    height: 100%;
+    width: 80%;
+}
+
+.nav-link {
+    height: 100%;
+}
+
+.nav-link a {
+    color:white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 2%;
+    padding: 1% 2%;
+}
+
+.nav-link a:hover {
+    border-bottom: solid 2px white;
+}
+
+/*Hamburger button*/
+.nav-btn span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: rgb(0, 0, 0);
+    margin: 6px auto;
+}
+
+#nav-check, .nav-btn {
+    display: none;
+}

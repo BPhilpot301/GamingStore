@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
 Welcome
@@ -6,6 +7,19 @@ Welcome
 
 
 {% block content %}
+
+<section class="project-card">
+    <div class="project-card">
+        <img src="{% static '/img/Charizard.jpg' %}" alt="Special Delivery Charizard">
+        <img src="{% static '/img/Brock.jpg' %}" alt="Special Delivery Charizard">
+        <img src="{% static '/img/Doc.jpg' %}" alt="Special Delivery Charizard">
+        <img src="{% static '/img/pikachu2.jpg' %}" alt="Special Delivery Charizard">
+        <img src="{% static '/img/pikacity.jpg' %}" alt="Special Delivery Charizard">
+    </div>
+    
+    
+
+</section>
 
 <h1>Welcome</h1>
 
