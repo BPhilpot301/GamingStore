@@ -10,17 +10,18 @@
 {% block content %}
 
 <section class="contact-form">
-            <h1>Contact Me!</h1>
-                <form id="contact-form" method="POST">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <div>
-                        <button type="submit">Submit</button>
-                        <button type="reset">Reset</button>
-                    </div>
+    <h1>Contact Me!</h1>
 
-                </form>
-          
+    <form id="contact-form" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div class="button-row">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
 </section>
+
 
 {% endblock content %}

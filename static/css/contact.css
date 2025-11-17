@@ -1,0 +1,88 @@
+/* Center the whole form section */
+.my-section{
+    background: url("../img/Pokemap.jpg") no-repeat center center / cover;
+    padding: 60px;
+    border-radius: 15px;
+}
+
+
+.contact-form {
+    max-width: 550px;
+    margin: 60px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading style */
+.contact-form h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* Label style */
+.contact-form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* Input + textarea styling */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    font-size: 16px;
+    margin-bottom: 18px;
+    transition: 0.2s ease;
+}
+
+/* Input focus animation */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #4a90e2;
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 4px rgba(74, 144, 226, 0.5);
+}
+
+/* Button row */
+.contact-form .button-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Buttons */
+.contact-form button {
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Submit */
+.contact-form button[type="submit"] {
+    background: #4a90e2;
+    color: white;
+}
+
+/* Hover animations */
+.contact-form button:hover {
+    opacity: 0.85;
+}
+
+/* Reset button */
+.contact-form button[type="reset"] {
+    background: #b8b8b8;
+    color: #333;
+}

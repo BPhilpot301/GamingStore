@@ -1,0 +1,145 @@
+Css
+
+.schedule {
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+.schedule h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+}
+
+.schedule-list {
+    list-style: none; /* removes bullets so it looks like Word */
+    padding-left: 0;
+    margin: 0 0 1rem 0;
+}
+
+.schedule-list li {
+    margin-bottom: 0.25rem;
+}
+
+.schedule .date {
+    font-weight: bold;
+}
+
+.schedule .note {
+    font-style: italic;
+}
+
+.schedule .extra-line {
+    margin: 0.25rem 0;
+}
+
+.schedule .attention-title {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.schedule .attention-text {
+    text-align: left;
+    margin-top: 0.25rem;
+}
+
+
+/* Overall container for all info on the tournaments page */
+.info-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Each block (Tournaments, Contests, Requirements, Sign-Up) */
+.info-block {
+    margin-bottom: 2rem;
+}
+
+/* Headings */
+.info-block h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.25rem;
+}
+
+.info-block h3 {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Paragraph spacing */
+.info-block p {
+    margin: 0.5rem 0;
+}
+
+/* Lists */
+.info-list {
+    margin: 0.5rem 0 0.5rem 1.5rem;
+    padding: 0;
+}
+
+.info-list.numbered {
+    list-style-type: decimal;
+}
+
+.info-list.bullets {
+    list-style-type: disc;
+}
+
+.info-list li {
+    margin-bottom: 0.4rem;
+}
+
+/* Make important labels inside lists stand out */
+.info-list li strong {
+    font-weight: 600;
+}
+
+
+/* Limit width so text doesn't stretch edge-to-edge */
+.info-container, .schedule {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Add a visual separation between major sections */
+.info-block {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 2rem;
+}
+
+/* Make main headings stand out */
+.info-block h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+/* Subheadings */
+.info-block h3 {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #444;
+}
+
+/* Improve paragraph readability */
+.info-block p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* List spacing */
+.info-list li {
+    margin-bottom: 0.6rem;
+}
+
+/* Make bold labels pop a little more */
+.info-list li strong {
+    color: #222;
+}

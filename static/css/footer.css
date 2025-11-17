@@ -1,15 +1,10 @@
-footer {
-    background-color: rgb(0, 0, 0);
-    height: 10rem;
-    margin-top: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start, flex-end,  center, space-between, space-around, space-evenly;
+footer {    
+    margin-top: 2rem; 
     border-top: solid 2px var(--secondary-color);
 }
 
 footer nav {
-    width: max-content;
+    width: 100%;
 }
 
 footer nav a {
