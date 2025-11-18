@@ -1,0 +1,71 @@
+.about-page {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    line-height: 1.7;
+    font-size: 18px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* This makes the text wrap in the empty space to the right */
+.about-img {
+    float: left;
+    width: 350px; /* you can tweak this smaller/bigger */
+    height: auto;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.about-img hover{
+    transform: scale(1.03);
+    box-shadow: 0 8px 18px rgba(0, 0, 0,0.2);
+}
+
+/* Clears the float at the end so nothing breaks layout */
+.about-page::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.about-page h1 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.about-page h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: #333;
+    transition: width 0.4s ease;
+}
+
+.about-page:hover h1::after {
+    width: 100%;
+}
+
+.thankyou {
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

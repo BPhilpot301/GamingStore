@@ -1,3 +1,7 @@
+input,
+textarea{
+    color: #000 !important;
+}
 /* Center the whole form section */
 .my-section{
     background: url("../img/Pokemap.jpg") no-repeat center center / cover;
@@ -13,6 +17,7 @@
     background: #ffffff;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    color: #000 !important;
 }
 
 /* Heading style */
@@ -42,6 +47,7 @@
     font-size: 16px;
     margin-bottom: 18px;
     transition: 0.2s ease;
+    color: #000 !important;
 }
 
 /* Input focus animation */
@@ -51,6 +57,7 @@
     background: #fff;
     outline: none;
     box-shadow: 0 0 4px rgba(74, 144, 226, 0.5);
+    color: #000;
 }
 
 /* Button row */
@@ -85,4 +92,9 @@
 .contact-form button[type="reset"] {
     background: #b8b8b8;
     color: #333;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+    color: #999;
 }

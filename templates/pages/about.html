@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+
 {% block title %}
 About
 {% endblock %}
@@ -8,6 +10,22 @@ About
 
 {% block content %}
 
-<h1>About Page</h1>
+<div class="about-page">
+    <img src="{% static 'img/aboutpage.webp' %}" 
+         alt="About our shop" 
+         class="about-img">
+
+    <h1>HELLO EVERYONE!</h1>
+
+    <p>My name is Britney and I am the owner of this card shop. This shop started because of my love for collecting gaming cards, specifically Pokemon cards. As I got older, I realized that there are a wide range of different cards that people love to collect and play that were not just Pokemon cards. Where our shop is located there weren’t many options for people like me to be able to go and find cards either for playing or collecting, so I decided to open a shop of my own to give more people the chance to be able to collect cards, play in tournaments, compete in cosplays, and more.</p>
+
+    <p>That journey began in 2012 and now has grown into a card shop that people know they can go to and find whatever they may be looking for or just come to compete in cosplays and have fun. Our shop welcomes anyone and everyone to join in! We want as many people as possible to be able to come and enjoy our shop.</p>
+
+    <p>We have multiple different contests and tournaments for those that love to play the game, and we also have a wide collection of cards for customers to purchase for their collections along with different merchandise of characters that everyone knows and loves.</p>
+
+    <p>For any questions about our contests or tournaments, we have a page named Tournaments and Contests that contains all the information for upcoming events that we hold along with a monthly schedule. If you have any other questions that may not be covered on that page, or maybe about something else that we offer, please use our Contact page to send us an email so that we can help you in the best way that we can.</p>
+
+    <p class="thankyou">Thank you for your support with our shop and we hope to see all of you soon!</p>
+</div>
 
 {% endblock %}
