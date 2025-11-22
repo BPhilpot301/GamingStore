@@ -16,6 +16,9 @@ def contact_view(request):
 def tourn_view(request):
     return render(request, 'pages/tourn.html')
 
+def details_view(request):
+    return render(request, 'pages/details.html')
+
 
 
 # Create your views here.

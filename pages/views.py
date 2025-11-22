@@ -3,9 +3,34 @@ from . import models
 from .forms import ContactForm
 from django.core.mail import send_mail
 
+DATA = [
+    {
+        "id": 1,
+        "name" : "",
+        "price": 0,
+        "pokemon": "",
+        "image": "img/Charizard.jpg"
+    },
+     {
+        "id": 1,
+        "name" : "",
+        "price": 0,
+        "pokemon": "",
+        "image": ""
+    },
+     {
+        "id": 1,
+        "name" : "",
+        "price": 0,
+        "pokemon": "",
+        "image": ""
+    },
+
+]
+
 # Create your views here.
 def home_view(request):
-    return render(request, 'pages/home.html')
+    return render(request, 'pages/home.html', {"card_list": DATA})
 
 def about_view(request):
     return render(request, 'pages/about.html')
@@ -15,6 +40,9 @@ def contact_view(request):
 
 def tourn_view(request):
     return render(request, 'pages/tourn.html')
+
+def details_view(request):
+    return render(request, 'pages/details.html')
 
 def contact_view(request):
     if request.method == 'POST':
@@ -39,7 +67,7 @@ def contact_view(request):
                     email,
                     ['britphilpot43@gmail.com']
                 )
-                print("did this work?")    
+                print("Email was sent")    
                 form = ContactForm()
                 return render(request, 'pages/contact.html', {'form':form})
             except Exception as e:

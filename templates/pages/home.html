@@ -5,22 +5,117 @@
 Welcome
 {% endblock %}
 
-
 {% block content %}
+<h1>Welcome</h1>
+<p>Our shop offers multiple cards for purchase, for any information on these cards please click the "More Info" button.
+</p>
 
-<section class="project-card">
-    <div class="project-card">
-        <img src="{% static '/img/Charizard.jpg' %}" alt="Special Delivery Charizard">
-        <img src="{% static '/img/Brock.jpg' %}" alt="Special Delivery Charizard">
-        <img src="{% static '/img/Doc.jpg' %}" alt="Special Delivery Charizard">
-        <img src="{% static '/img/pikachu2.jpg' %}" alt="Special Delivery Charizard">
-        <img src="{% static '/img/pikacity.jpg' %}" alt="Special Delivery Charizard">
+<section class="card-grid">
+
+    {% for card in card_list %}
+    <div class="card" style="width: 18rem;">
+        <img src="{% static {{card.image}} %}" class="card-img-top" alt="special delivery">
+        <div class="card-body">
+            <h5 class="card-title">{{card.name}}</h5>
+            <p class="card-text">Market price - ${{card.price}}</p>
+            <a href="{% url 'details' card.id %}" class="btn btn-primary">More Info</a>
+        </div>
+    </div>    
+    {% endfor %}
+
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/Charizard.jpg' %}" class="card-img-top" alt="special delivery">
+        <div class="card-body">
+            <h5 class="card-title">Special Delivery Charizard</h5>
+            <p class="card-text">Market price - $135.28.</p>
+            <a href="{% url 'details' %}" class="btn btn-primary">More Info</a>
+        </div>
     </div>
-    
-    
+
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/Brock.jpg' %}" class="card-img-top" alt="Brock Trainer">
+        <div class="card-body">
+            <h5 class="card-title">Lt. Surge</h5>
+            <p class="card-text">Market price - $3.83.</p>
+            <a href="{% url 'details' %}" class="btn btn-primary">More Info</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/mew.jpg' %}" class="card-img-top" alt="mew">
+        <div class="card-body">
+            <h5 class="card-title">Mew alt Art</h5>
+            <p class="card-text">Market price - $135.58.</p>
+            <a href="{% url 'details' %}" class="btn btn-primary">More Info</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/mewfull.jpg' %}" class="card-img-top" alt="mewfull">
+        <div class="card-body">
+            <h5 class="card-title">Mew Full Art</h5>
+            <p class="card-text">Market price - $22.91.</p>
+            <a href="{% url 'details' %}" class="btn btn-primary">More Info</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/ninetails.jpg' %}" class="card-img-top" alt="ninetails">
+        <div class="card-body">
+            <h5 class="card-title">Ninetails</h5>
+            <p class="card-text">Market price - $114.40.</p>
+            <a href="{% url 'details' %}" class="btn btn-primary">More Info</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/mewtwoJP.jpg' %}" class="card-img-top" alt="MewTwo">
+        <div class="card-body">
+            <h5 class="card-title">Mewtwo</h5>
+            <p class="card-text">Market price - $244.85.</p>
+            <a href="{% url 'details' %}" class="btn btn-primary">More Info</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/mewgold.jpg' %}" class="card-img-top" alt="mew full art gold">
+        <div class="card-body">
+            <h5 class="card-title">Mew Gold Full Art</h5>
+            <p class="card-text">Market price - $142.97.</p>
+            <a href="{% url 'details' %}" class="btn btn-primary">More Info</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/mewshiny.jpg' %}" class="card-img-top" alt="mewshiny">
+        <div class="card-body">
+            <h5 class="card-title">Mew Shiny Full Art</h5>
+            <p class="card-text">Market price - $223.76.</p>
+            <a href="{% url 'details' %}" class="btn btn-primary">More Info</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/pikachu2.jpg' %}" class="card-img-top" alt="pikachu">
+        <div class="card-body">
+            <h5 class="card-title">Pikachu and Friends</h5>
+            <p class="card-text">Market price - $183.27.</p>
+            <a href="{% url 'details' %}" class="btn btn-primary">More Info</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/pikacity.jpg' %}" class="card-img-top" alt="pikacity">
+        <div class="card-body">
+            <h5 class="card-title">Pikachu Alt Art</h5>
+            <p class="card-text">Market price - $358.00.</p>
+            <a href="{% url 'details' %}" class="btn btn-primary">More Info</a>
+        </div>
+    </div>
+    <!-- add more cards the same way -->
 
 </section>
 
-<h1>Welcome</h1>
+
 
 {% endblock %}
