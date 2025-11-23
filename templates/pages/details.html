@@ -11,5 +11,45 @@ Details
 {% block content %}
 
 
+<h1 class="card-title">{{card.name}}</h1>
+<h2 class="card-subtitle">{{card.pokemon}}</h2>
+
+
+<div class="card-section">
+    <div class="card-images">
+        <h4>Images</h4>
+
+        <img src="{{info.sprites.front_default}}" />
+        <img src="{{info.sprites.back_default}}" />
+        <img src="{{info.sprites.front_shiny}}" />
+        <img src="{{info.sprites.back_shiny}}" />
+        <img src="{{info.sprites.front_female}}" />
+        <img src="{{info.sprites.back_female}}" />
+    </div>
+
+
+
+    <div class="card-section">
+        <h4>Audio</h4>
+
+        <audio src="{{info.cries.latest}}">Latest</audio>
+        <audio src="{{info.cries.legacy}}">Legacy</audio>
+
+
+    </div>
+
+
+    <div class="card-section">
+    <h4>Abilities</h4>
+        {% for entry in info.abilities %}
+
+        <h6>{{entry.ability.name}}</h6>
+
+        {% endfor %}
+
+    </div>
+</div>
+
+
 
 {% endblock %}
