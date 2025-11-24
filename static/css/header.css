@@ -1,5 +1,5 @@
 header {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color), !important;
     height: 60px;
     position:sticky;
     top: 0px;
@@ -25,7 +25,7 @@ header {
 }
 
 .nav-link a:hover {
-    border-bottom: solid 2px white;
+    border-bottom: solid 2px rgb(106, 80, 255);
 }
 
 /*Hamburger button*/
@@ -33,7 +33,7 @@ header {
     display: block;
     width: 30px;
     height: 3px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(216, 216, 216);
     margin: 6px auto;
 }
 

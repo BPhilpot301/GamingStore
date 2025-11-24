@@ -1,6 +1,6 @@
 footer {    
     margin-top: 2rem; 
-    border-top: solid 2px var(--secondary-color);
+    border-top: solid 2px var(--primary-color), !important;
 }
 
 footer nav {

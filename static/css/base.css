@@ -30,7 +30,7 @@
  all the elemnts.*/
 
 body {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../img/bg-cards.jpg");
+    background-image: url("../img/Pokemap.jpg") no-repeat center center / cover, !important;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -38,9 +38,11 @@ body {
 }
 
 html {
-    background-color: rgb(60, 20, 240);
+    background-color: rgb(179, 162, 255);
     font-size: 14px;
 }
+
+
 
 * {
     font-family: var(--sans-font);

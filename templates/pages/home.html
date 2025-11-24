@@ -10,13 +10,13 @@ Welcome
 <p>Our shop offers multiple cards for purchase, for any information on these cards please click the "More Info" button.
 </p>
 
-<section class="card-list">
+<section class="card-grid d-flex flex-row wrap">
 
     {% for card in card_list %}
     <div class="card" style="width: 18rem;">
         <img src="{% static card.image %}" class="card-img-top" alt="special delivery">
         <div class="card-body">
-            <h5 class="card-title">{{card.name}}</h5>
+            <h3 class="card-title">{{card.name}}</h3>
             <p class="card-text">Market price - ${{card.price}}</p>
             <a href="{% url 'details' card.id %}" class="btn btn-primary">More Info</a>
         </div>

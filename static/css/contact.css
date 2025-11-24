@@ -4,7 +4,7 @@ textarea{
 }
 /* Center the whole form section */
 .my-section{
-    background: url("../img/Pokemap.jpg") no-repeat center center / cover;
+    background: url("../img/Pokemap.jpg") no-repeat center center / cover, !important;
     padding: 60px;
     border-radius: 15px;
     opacity: 0.5;
@@ -15,7 +15,7 @@ textarea{
     max-width: 550px;
     margin: 60px auto;
     padding: 40px;
-    background: #ffffff;
+    background: #6e6cff;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     color: #000 !important;
