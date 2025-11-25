@@ -36,3 +36,22 @@ ____________________________
 
 # create a pages app
 python3 manage.py startapp pages
+
+everytime you modify any of the models you need to run migrations
+python manage.py makemigrations
+python manage.py migrate
+
+even if you are just fixing a typo you still have to do these two commands
+
+
+Class-based views:
+
+View         = Generic View
+ListView     = get a list of records
+DetailView   = get a single (detail) record
+CreateView   = create a new record
+DeleteView   = remove a record
+UpdateView   = modify an existing record
+LoginView    = LogIn
+
+"""

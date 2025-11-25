@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+My Cards
+{% endblock %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/list.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="list">
+
+    <h1>List of Cards</h1>
+    <div class="records">
+        {% for record in card_list %}
+        <div class="card">
+
+            {% if record.image %}
+            <img src="{{record.image.url}}">
+            {% endif %}
+
+            <h5>{{record.title}}</h5>
+
+            <p>{{record.description|truncatechars:80}}</p>
+            
+            <p>{{record.created_on}}</p>
+            
+            <p>{{record.pokemon}}</p>
+            
+            <button>View Details</button>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}
