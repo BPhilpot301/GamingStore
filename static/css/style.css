@@ -1,0 +1,86 @@
+.details-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 25px;
+}
+
+.card-section h4 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+/* image row */
+.card-images {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.card-images img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+    0% {transform:translateY(0);}
+    50% {transform: translateY(-6px);}
+    100% {transform: translateY(0);}
+}
+
+.card-images img:hover{
+    transform: translateY(-10px) scale(1.1);
+    filter: drop-shadow(0 0 12px rgb(255, 255, 255));
+}
+
+/* two-column layout */
+.details-columns {
+    display: grid;
+    grid-template-columns: .5fr .5fr;
+    gap: 30px;
+}
+
+.card-section ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.card-section ul li {
+    margin-bottom: 4px;
+}
+
+/* makes the long moves list scroll instead of super tall page (optional) */
+.moves-list {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+body{
+    background: #8dcddd;
+}

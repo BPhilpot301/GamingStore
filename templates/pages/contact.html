@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
 
 {% block title %}
     Contact
@@ -8,20 +11,21 @@
 
 
 {% block content %}
-<section class="contact-form">
-    <h1>Contact Me!</h1>
-    <h2 class="text-body-secondary">For any questions you may have, please message me here. This page will send your message directly to our email.</h2>
+<div class="contact">
+    <section class="contact-form">
+        <h1>Contact Me!</h1>
+        <h2 class="text-body-secondary">For any questions you may have, please message me here. This page will send your message directly to our email.</h2>
 
-    <form id="contact-form" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
+        <form id="contact-form" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
 
-        <div class="button-row">
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
-        </div>
-    </form>
-</section>
-
+            <div class="button-row">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </section>
+</div>
 
 {% endblock content %}

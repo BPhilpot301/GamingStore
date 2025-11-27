@@ -36,7 +36,7 @@
 }
 
 /*Phone*/
-@media(max-width:640px) {
+@media(max-width:670px) {
     
     html {
         font-size: 10px;
@@ -75,4 +75,10 @@
     footer nav {
         height: fit-content;
     }
+
+
+    .home h1 {
+        color:red;
+    }
+
 }

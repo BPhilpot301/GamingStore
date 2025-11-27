@@ -35,10 +35,10 @@ DATA = [
     },
     {
         "id": 5,
-        "name" : "Ninetails",
+        "name" : "Ninetales",
         "price": 114.40,
-        "pokemon": "Ninetails",
-        "image": "img/ninetails.jpg"
+        "pokemon": "Ninetales",
+        "image": "img/ninetales.jpg"
     },
     {
         "id": 6,

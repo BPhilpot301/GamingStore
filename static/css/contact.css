@@ -1,13 +1,19 @@
 input,
 textarea{
-    color: #000 !important;
+    color: #000000 !important;
+}
+
+.contact{
+    background-image: url("../img/Pokemap.jpg") no-repeat center center / cover;
+    padding: 60px;
+    border-radius: 15px;
 }
 /* Center the whole form section */
 .my-section{
-    background: url("../img/Pokemap.jpg") no-repeat center center / cover, !important;
+    background: url("../img/Pokemap.jpg") no-repeat center center / cover;
     padding: 60px;
     border-radius: 15px;
-    opacity: 0.5;
+    
 }
 
 
@@ -15,10 +21,10 @@ textarea{
     max-width: 550px;
     margin: 60px auto;
     padding: 40px;
-    background: #6e6cff;
+    background-color: rgb(127, 201, 250);
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    color: #000 !important;
+    color: #ffffff;
 }
 
 /* Heading style */

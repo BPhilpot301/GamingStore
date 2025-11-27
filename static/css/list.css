@@ -1,0 +1,23 @@
+.list {
+    padding: 20px;
+}
+
+.list h1 {
+    color:darkcyan;
+}
+
+.list .card {
+    display: inline-block;
+    width: 250px;
+    height: 360px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 5px;
+    vertical-align: top;
+    background-color: white;
+}
+
+.list .card img {
+    width: 230px;
+    max-width: 120px;
+}

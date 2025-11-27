@@ -28,17 +28,15 @@
 
 /*Genera style: The style that is going to be applied to
  all the elemnts.*/
+/* light mode */
 
-body {
-    background-image: url("../img/Pokemap.jpg") no-repeat center center / cover, !important;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-}
+
+
+
+
 
 html {
-    background-color: rgb(179, 162, 255);
+    background-color: rgb(19, 0, 104);
     font-size: 14px;
 }
 

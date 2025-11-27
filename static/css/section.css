@@ -150,9 +150,6 @@ a p:nth-child(4),  .experience-card p:nth-child(4)  {
 }
 
 .contact-form {
-  display: flex;
-  flex-direction: row;
-  gap: 1.2rem;
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
@@ -184,8 +181,8 @@ a p:nth-child(4),  .experience-card p:nth-child(4)  {
   padding: 0.8rem;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  cursor:pointer
+  transition; background-color: 0.3s ease;
 }
 
 .contact-form button:hover {

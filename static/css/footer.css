@@ -1,6 +1,6 @@
 footer {    
     margin-top: 2rem; 
-    border-top: solid 2px var(--primary-color), !important;
+    border-top: solid 2px url("../img/Pokemap.jpg");
 }
 
 footer nav {

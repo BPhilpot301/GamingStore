@@ -13,6 +13,7 @@ class Card(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     set = models.CharField(max_length=200)
     health = models.IntegerField()
+    
 
 
     def __str__(self):

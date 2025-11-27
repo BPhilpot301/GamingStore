@@ -1,10 +1,16 @@
 header {
-    background-color: var(--primary-color), !important;
+    background-image: url("https://i.imgur.com/BwnxyqD.png");
     height: 60px;
     position:sticky;
     top: 0px;
 }
 
+container-fluid{
+    background-image: url("https://i.imgur.com/BwnxyqD.png");
+    height: 60px;
+    position:sticky;
+    top: 0px;
+}
 
 /*Right Side*/
 /*nav {

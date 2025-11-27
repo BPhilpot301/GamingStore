@@ -12,7 +12,8 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800&family=Lobster&display=swap"
         rel="stylesheet">
 
-
+    {% block css %}
+    {% endblock %}
 </style>
 
     
@@ -33,7 +34,7 @@
     </title>
     
 </head>
-<body class="p-3 mb-2 bg-primary-subtle text-primary-emphasis">
+<body>
     
     {% include 'navbar.html' %}
     
@@ -42,7 +43,7 @@
         {% endblock %}
     </main>
 
-    <footer class="p-3 mb-2 bg-primary-subtle text-primary-emphasis">
+    <footer>
        {% include 'navbar.html' %}
 
     </footer>

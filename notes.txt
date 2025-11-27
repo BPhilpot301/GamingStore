@@ -55,3 +55,10 @@ UpdateView   = modify an existing record
 LoginView    = LogIn
 
 """
+
+
+
+
+Add to base html
+<a class="nav-link" href="{% url 'login' %}">Log In</a>
+<a class="nav-link" href="{% url 'account' %}">Create Account</a>
