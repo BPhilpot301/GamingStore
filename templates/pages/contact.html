@@ -11,21 +11,23 @@
 
 
 {% block content %}
-<div class="contact">
-    <section class="contact-form">
-        <h1>Contact Me!</h1>
-        <h2 class="text-body-secondary">For any questions you may have, please message me here. This page will send your message directly to our email.</h2>
+<section class="body">
+    <div class="contact">
+        <section class="contact-form">
+            <h1>Contact Me!</h1>
+            <h2>For any questions you may have, please message me here. This page will send your message directly to our email.</h2>
 
-        <form id="contact-form" method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
+            <form id="contact-form" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
 
-            <div class="button-row">
-                <button type="submit">Submit</button>
-                <button type="reset">Reset</button>
-            </div>
-        </form>
-    </section>
-</div>
+                <div class="button-row">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</section>
 
 {% endblock content %}

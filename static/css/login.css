@@ -1,28 +1,4 @@
-body{
-    background-image: url(https://www.pokemon.com/static-assets/content-assets/cms2/img/misc/virtual-backgrounds/pokemon/detective-pikachu.jpg);
-}
-
-
-input,
-textarea{
-    color: #000000 !important;
-}
-
-.contact{
-    background-image: url("../img/Pokemap.jpg") no-repeat center center / cover;
-    padding: 60px;
-    border-radius: 15px;
-}
-/* Center the whole form section */
-.my-section{
-    background: url("../img/Pokemap.jpg") no-repeat center center / cover;
-    padding: 60px;
-    border-radius: 15px;
-    
-}
-
-
-.contact-form {
+.login-form {
     max-width: 550px;
     margin: 60px auto;
     padding: 40px;
@@ -33,7 +9,7 @@ textarea{
 }
 
 /* Heading style */
-.contact-form h1 {
+.login-form h1 {
     text-align: center;
     margin-bottom: 25px;
     font-size: 30px;
@@ -42,15 +18,15 @@ textarea{
 }
 
 /* Label style */
-.contact-form label {
+.login-form label {
     font-weight: 600;
     margin-bottom: 6px;
     display: block;
 }
 
 /* Input + textarea styling */
-.contact-form input,
-.contact-form textarea {
+.login-form input,
+.login-form textarea {
     width: 100%;
     padding: 12px 14px;
     border-radius: 8px;
@@ -63,24 +39,24 @@ textarea{
 }
 
 /* Input focus animation */
-.contact-form input:focus,
-.contact-form textarea:focus {
+.login-form input:focus,
+.login-form textarea:focus {
     border-color: #4a90e2;
     background: #fff;
     outline: none;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.493);
+    box-shadow: 0 0 4px rgba(74, 144, 226, 0.5);
     color: #000;
 }
 
 /* Button row */
-.contact-form .button-row {
+.login-form .button-row {
     display: flex;
     justify-content: center;
-    gap: 100px;
+    gap: 20px;
 }
 
 /* Buttons */
-.contact-form button {
+.login-form button {
     padding: 10px 25px;
     font-size: 16px;
     border-radius: 8px;
@@ -90,25 +66,23 @@ textarea{
 }
 
 /* Submit */
-.contact-form button[type="submit"] {
+.login-form button[type="submit"] {
     background: #4a90e2;
     color: white;
 }
 
 /* Hover animations */
-.contact-form button:hover {
+.login-form button:hover {
     opacity: 0.85;
 }
 
 /* Reset button */
-.contact-form button[type="reset"] {
+.login-form button[type="reset"] {
     background: #b8b8b8;
     color: #333;
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder{
+.login-form input::placeholder,
+.login-form textarea::placeholder{
     color: #999;
 }
-
-

@@ -21,8 +21,8 @@ Welcome
         <div class="card" style="width: 18rem;">
             <img src="{% static card.image %}" class="card-img-top" alt="special delivery">
             <div class="card-body">
-                <h3 class="card-title">{{card.name}}</h3>
-                <p class="card-text">Market price - ${{card.price}}</p>
+                <h4 class="card-title">{{card.name}}</h4>
+                <h4 class="card-text">Market price - ${{card.price}}</h4>
                 <a href="{% url 'details' card.id %}" class="btn btn-primary">More Info</a>
             </div>
         </div>    

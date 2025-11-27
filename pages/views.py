@@ -3,6 +3,9 @@ from . import models
 from .forms import ContactForm
 from django.core.mail import send_mail
 import requests
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+
 
 DATA = [
     {
@@ -29,7 +32,7 @@ DATA = [
     {
         "id": 4,
         "name" : "Mew Full Art",
-        "price": 0,
+        "price": 133.55,
         "pokemon": "Mew",
         "image": "img/mewfull.jpg"
     },
@@ -89,6 +92,28 @@ def contact_view(request):
 
 def tourn_view(request):
     return render(request, 'pages/tourn.html')
+
+def login_view(request):
+    return render(request, 'pages/login.html')
+
+def custom_login(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(request, username=username, password=password)
+
+        if user:
+            login(request, user)
+            return redirect('home')
+        else:
+            return render(request, 'login.html', {'error': 'Invalid credentials'})
+
+    return render(request, 'login.html')
+
+
+def create_view(request):
+    return render(request, 'pages/create.html')
 
 def details_view(request, pk):    
     selected_card = {}
@@ -153,3 +178,4 @@ def _get_pokemon_info(name):
     else:
         print(f"Error {response.status_code}")
         print(response.text)
+

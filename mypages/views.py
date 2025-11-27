@@ -19,6 +19,12 @@ def tourn_view(request):
 def details_view(request):
     return render(request, 'pages/details.html')
 
+def login_view(request):
+    return render(request, 'pages/login.html')
+
+def create_view(request):
+    return render(request, 'pages/create.html')
+
 
 
 # Create your views here.

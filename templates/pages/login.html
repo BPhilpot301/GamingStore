@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+    {% block content %}
+        
+        <div class="login">
+            <section class="login-form">
+                <h2>Login</h2>
+                <form method="post">
+                    {% csrf_token %}
+        
+                        <label>Username</label>
+                        <input type="text" name="username">
+
+                        <label>Password</label>
+                        <input type="password" name="password">
+
+                    <div class="button-row">
+                        <button type="submit">Login</button>
+                    </div>
+
+                {% if form.errors %}
+                <p style="color:red;">Invalid username or password.</p>
+                {% endif %}
+            </section>
+
+                </form>
+        </div>
+
+
+    {% if form.errors %}
+    <p style="color:red;">Invalid username or password.</p>
+    {% endif %}
+
+{% endblock %}
+
+

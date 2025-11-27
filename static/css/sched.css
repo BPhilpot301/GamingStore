@@ -1,5 +1,7 @@
 Css
 
+
+
 .schedule {
     margin-top: 2rem;
     font-size: 1rem;
@@ -8,12 +10,14 @@ Css
 .schedule h2 {
     margin-bottom: 0.75rem;
     font-size: 1.3rem;
+    color: rgb(0, 0, 0);
 }
 
 .schedule-list {
     list-style: none; /* removes bullets so it looks like Word */
     padding-left: 0;
     margin: 0 0 1rem 0;
+    color: rgb(0, 0, 0);
 }
 
 .schedule-list li {
@@ -22,25 +26,30 @@ Css
 
 .schedule .date {
     font-weight: bold;
+    color: rgb(0, 0, 0);
 }
 
 .schedule .note {
     font-style: italic;
+    color: rgb(0, 0, 0);
 }
 
 .schedule .extra-line {
     margin: 0.25rem 0;
+    color: rgb(0, 0, 0);
 }
 
 .schedule .attention-title {
     margin-top: 1.5rem;
     font-weight: bold;
     text-align: center;
+    color: rgb(0, 0, 0);
 }
 
 .schedule .attention-text {
-    text-align: left;
+    text-align: center;
     margin-top: 0.25rem;
+    color: rgb(0, 0, 0);
 }
 
 
@@ -48,8 +57,12 @@ Css
 .info-container {
     max-width: 900px;
     margin: 2rem auto;
+    padding: 20px;
     line-height: 1.6;
     font-size: 1rem;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    background-color: #ffffffb5;
 }
 
 /* Each block (Tournaments, Contests, Requirements, Sign-Up) */
@@ -61,7 +74,7 @@ Css
 .info-block h2 {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #000000;
     padding-bottom: 0.25rem;
 }
 
@@ -69,11 +82,13 @@ Css
     font-size: 1.1rem;
     margin-top: 1rem;
     margin-bottom: 0.25rem;
+    color: rgb(0, 0, 0);
 }
 
 /* Paragraph spacing */
 .info-block p {
     margin: 0.5rem 0;
+    color: rgb(0, 0, 0);
 }
 
 /* Lists */
@@ -84,10 +99,12 @@ Css
 
 .info-list.numbered {
     list-style-type: decimal;
+    color: rgb(0, 0, 0);
 }
 
 .info-list.bullets {
     list-style-type: disc;
+    color: rgb(0, 0, 0);
 }
 
 .info-list li {
@@ -102,14 +119,21 @@ Css
 
 /* Limit width so text doesn't stretch edge-to-edge */
 .info-container, .schedule {
-    max-width: 900px;
-    margin: 0 auto;
+   
+    margin-top: 2rem;
+    padding: 20px;
+    line-height: 1.6;
+    font-size: 1rem;
+    text-align: center;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    background-color: #ffffffb5;
 }
 
 /* Add a visual separation between major sections */
 .info-block {
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #000000;
     margin-bottom: 2rem;
 }
 
@@ -117,21 +141,21 @@ Css
 .info-block h2 {
     font-size: 1.6rem;
     margin-bottom: 0.75rem;
-    color: #333;
+    color: #000000;
 }
 
 /* Subheadings */
 .info-block h3 {
     font-size: 1.2rem;
     margin-top: 1rem;
-    color: #444;
+    color: #000000;
 }
 
 /* Improve paragraph readability */
 .info-block p {
     font-size: 1rem;
     line-height: 1.7;
-    color: #444;
+    color: #000000;
 }
 
 /* List spacing */
@@ -141,5 +165,9 @@ Css
 
 /* Make bold labels pop a little more */
 .info-list li strong {
-    color: #222;
+    color: #000000;
+}
+
+.sched p {
+    color: rgb(0, 0, 0);
 }

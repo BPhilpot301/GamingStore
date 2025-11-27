@@ -3,7 +3,7 @@
  
     --secondary-color: #6772D7;
   
-    --neutral-color: #333333;
+    --neutral-color: #000000;
 
     --background-color: #a0b9f3;
 
@@ -36,7 +36,7 @@
 
 
 html {
-    background-color: rgb(19, 0, 104);
+    background-color: rgb(255, 255, 255);
     font-size: 14px;
 }
 
@@ -60,7 +60,7 @@ h1 {
 }
 
 h2 {
-    color: var(--primary-color);
+    color: black;
     font-family: var(--lobster-font);
     font-weight: 400;
     letter-spacing: 0.06rem;
