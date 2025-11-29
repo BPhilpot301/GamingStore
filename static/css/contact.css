@@ -26,7 +26,7 @@ textarea{
     max-width: 550px;
     margin: 60px auto;
     padding: 40px;
-    background-color: rgb(127, 201, 250);
+    background-color: rgba(1, 215, 243, 0.767);
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     color: #ffffff;
@@ -65,7 +65,7 @@ textarea{
 /* Input focus animation */
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #4a90e2;
+    border-color: #ffffff;
     background: #fff;
     outline: none;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.493);
@@ -91,7 +91,7 @@ textarea{
 
 /* Submit */
 .contact-form button[type="submit"] {
-    background: #4a90e2;
+    background: #0400ff;
     color: white;
 }
 
@@ -102,8 +102,8 @@ textarea{
 
 /* Reset button */
 .contact-form button[type="reset"] {
-    background: #b8b8b8;
-    color: #333;
+    background: #000000;
+    color: #ffffff;
 }
 
 .contact-form input::placeholder,

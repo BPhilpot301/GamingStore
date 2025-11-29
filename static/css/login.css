@@ -2,7 +2,7 @@
     max-width: 550px;
     margin: 60px auto;
     padding: 40px;
-    background-color: rgb(127, 201, 250);
+    background-color: rgba(53, 208, 255, 0.822);
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     color: #ffffff;
@@ -41,7 +41,7 @@
 /* Input focus animation */
 .login-form input:focus,
 .login-form textarea:focus {
-    border-color: #4a90e2;
+    border-color: #0011ff;
     background: #fff;
     outline: none;
     box-shadow: 0 0 4px rgba(74, 144, 226, 0.5);
@@ -67,7 +67,7 @@
 
 /* Submit */
 .login-form button[type="submit"] {
-    background: #4a90e2;
+    background: #0004fa;
     color: white;
 }
 
