@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/create.css' %}">
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -10,14 +10,14 @@ Create an Account!
 
 {% block content %}
 
-<div class="home">
+<div class="contact-form">
     <h1>Create an Account</h1>
     <form method="post">
         {% csrf_token %}
 
         {{ form.as_p }}
 
-        <button class="btn btn-primary">Create Account</button>
+        <button type="submit">Submit</button>
     
     </form>
 

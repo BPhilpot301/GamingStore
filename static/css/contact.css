@@ -8,6 +8,8 @@ textarea{
     color: #000000 !important;
 }
 
+
+
 .contact{
     background-image: url("../img/Pokemap.jpg") no-repeat center center / cover;
     padding: 60px;
@@ -91,7 +93,7 @@ textarea{
 
 /* Submit */
 .contact-form button[type="submit"] {
-    background: #0400ff;
+    background: #0400fd;
     color: white;
 }
 
@@ -110,5 +112,7 @@ textarea{
 .contact-form textarea::placeholder{
     color: #999;
 }
+
+
 
 

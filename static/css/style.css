@@ -11,12 +11,18 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
     color: white;
+    background-color: #ffffffb5;
     
 }
 
 .card detail{
-    color: white;
+    color: rgb(0, 0, 0);
 }
+
+.card ul {
+    color: black;
+}
+
 
 .card-title {
     text-align: center;
@@ -36,7 +42,7 @@
 .card-section h4 {
     font-size: 22px;
     margin-bottom: 8px;
-    color: #ffffff;
+    color: #000000;
 }
 
 /* image row */
@@ -46,6 +52,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 25px;
+    
 }
 
 .card-images img {
@@ -73,28 +80,25 @@
     display: grid;
     grid-template-columns: .5fr .5fr;
     gap: 30px;
-    color: white;
+    color: black;
+    background-color: #ffffffd8;
 }
 
 .card-section ul {
     list-style: none;
     padding-left: 0;
     margin: 0;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .card-section ul li {
     margin-bottom: 4px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 /* makes the long moves list scroll instead of super tall page (optional) */
 .moves-list {
     max-height: 250px;
     overflow-y: auto;
-    color: white;
 }
 
-body{
-    background: #ffffff;
-}
