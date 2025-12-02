@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from . import models
-from .forms import ContactForm
+from .forms import ContactForm, SignupForm
 from django.core.mail import send_mail
 import requests
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
+from django.contrib.auth.views import LoginView
+from django.urls import reverse, reverse_lazy
+from django.views.generic import CreateView, ListView
 
 
 DATA = [
@@ -96,6 +99,15 @@ def tourn_view(request):
 def login_view(request):
     return render(request, 'pages/login.html')
 
+def create_view(request):
+    return render(request, 'pages/create.html')
+
+class UserLogin(LoginView):
+    template_name = 'pages/login.html'
+
+    def get_success_url(self):
+        return reverse('home')
+
 def custom_login(request):
     if request.method == "POST":
         username = request.POST['username']
@@ -111,22 +123,22 @@ def custom_login(request):
 
     return render(request, 'login.html')
 
+class UserSignup(CreateView):
+    template_name = "pages/create.html"
+    success_url = reverse_lazy("login")
+    form_class = SignupForm
 
-def create_view(request):
-    return render(request, 'pages/create.html')
+    def form_valid(self, form):
+        user = form.save(commit=False)
+        password = form.cleaned_data['password']
+        user.set_password(password)
+        user.save
 
-def details_view(request, pk):    
-    selected_card = {}
-    for card in DATA:
-        if card["id"] == pk:
-            # found the one
-            selected_card = card
-            break # stop looking
+        return super().form_valid(form)
 
-    # Get pokemon from the api here
-    info = _get_pokemon_info(card["pokemon"])
 
-    return render(request, 'pages/details.html', {"card": selected_card, "info": info})
+#class UserCreate(CreateView):
+    #template_name = "users/create.html"
 
 def contact_view(request):
     if request.method == 'POST':
@@ -164,6 +176,18 @@ def contact_view(request):
         form = ContactForm()
         return render(request, 'pages/contact.html', {'form':form})
     
+def details_view(request, pk):    
+    selected_card = {}
+    for card in DATA:
+        if card["id"] == pk:
+            # found the one
+            selected_card = card
+            break # stop looking
+
+    # Get pokemon from the api here
+    info = _get_pokemon_info(card["pokemon"])
+
+    return render(request, 'pages/details.html', {"card": selected_card, "info": info})
 
 
 
@@ -178,4 +202,5 @@ def _get_pokemon_info(name):
     else:
         print(f"Error {response.status_code}")
         print(response.text)
+
 

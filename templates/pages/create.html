@@ -12,11 +12,14 @@ Create an Account!
 
 <div class="home">
     <h1>Create an Account</h1>
-    <section class="card-grid">
-    
-       
+    <form method="post">
+        {% csrf_token %}
 
-    </section>
+        {{ form.as_p }}
+
+        <button class="btn btn-primary">Create Account</button>
+    
+    </form>
 
 
 </div>

@@ -9,6 +9,6 @@ urlpatterns = [
     path('contact/', views.contact_view, name="contact"),
     path('tourn/', views.tourn_view, name="tourn"),
     path('details/<int:pk>', views.details_view, name="details"),
-    path('login/', views.login_view, name="login"),
-    path('create/>', views.create_view, name="create"),
+    path('login/', views.UserLogin.as_view(), name="login"),
+    path('create/', views.UserSignup.as_view(), name="create"),
 ]
