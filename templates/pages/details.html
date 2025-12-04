@@ -85,6 +85,28 @@ Details
     </div>
 </div>
 
+<div class="home">
+    <h1>Purchase</h1>
+    <p>If you're thinking about buying one of our cards, you can always add it to your cart!
+    </p>
+
+    <section class="card-grid">
+
+        {% for card in card_list %}
+        <div class="card" style="width: 18rem;">
+            <img src="{% static card.image %}" class="card-img-top" alt="special delivery">
+            <div class="card-body">
+                <h4 class="card-title">{{card.name}}</h4>
+                <h4 class="card-text">Market price - ${{card.price}}</h4>
+                <a href="{% url 'details' card.id %}" class="btn btn-primary">More Info</a>
+            </div>
+        </div>    
+        {% endfor %}
+
+</section>
+
+
+</div>
 
 
 

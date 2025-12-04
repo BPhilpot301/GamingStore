@@ -17,69 +17,110 @@ DATA = [
         "price": 135.28,
         "pokemon": "Charizard",
         "image": "img/Charizard.jpg",
+        "set": "Sword & Shield Promo Cards",
+        "type": "Fire, Flying",
+        "weakness": "Rock, Water, and Electric types",
+        "health": "160HP"
+        
     },
      {
         "id": 2,
         "name" : "Lt. Surge",
         "price": 3.83,
         "pokemon": "Lt. Surge",
-        "image": "img/Brock.jpg"
+        "image": "img/Brock.jpg",
+        "set": "Gym Heros",
+        "type": "Trainer",
+        "weakness": "None",
+        "health": "0HP"
     },
      {
         "id": 3,
         "name" : "Mew Alt Art",
         "price": 135.58,
         "pokemon": "Mew",
-        "image": "img/mew.jpg"
+        "image": "img/mew.jpg",
+        "set": "Scarlet & Violet—151",
+        "type": "Psychic",
+        "weakness": "Bug, Dark, and Ghost-type",
+        "health": "180HP"
     },
     {
         "id": 4,
         "name" : "Mew Full Art",
         "price": 133.55,
         "pokemon": "Mew",
-        "image": "img/mewfull.jpg"
+        "image": "img/mewfull.jpg",
+        "set": "Scarlet & Violet—151",
+        "type": "Psychic",
+        "weakness": "Bug, Dark, and Ghost-type",
+        "health": "180HP"
     },
     {
         "id": 5,
         "name" : "Ninetales",
         "price": 114.40,
         "pokemon": "Ninetales",
-        "image": "img/ninetales.jpg"
+        "image": "img/ninetales.jpg",
+        "set": "Japanese Base Set",
+        "type": "Fire",
+        "weakness": "Rock, Water, and Ground types",
+        "health": "60HP"
     },
     {
         "id": 6,
         "name" : "Mewtwo",
         "price": 244.85,
         "pokemon": "Mewtwo",
-        "image": "img/mewtwoJP.jpg"
+        "image": "img/mewtwoJP.jpg",
+        "set": "Sword & Shield Promo Cards",
+        "type": "Psychic",
+        "weakness": "Bug, Dark, and Ghost-type",
+        "health": "170HP"
     },
     {
         "id": 7,
         "name" : "Mew Gold Full Art",
         "price": 142.97,
         "pokemon": "Mew",
-        "image": "img/mewgold.jpg"
+        "image": "img/mewgold.jpg",
+        "set": "Scarlet & Violet—151",
+        "type": "Psychic",
+        "weakness": "Bug, Dark, and Ghost-type",
+        "health": "180HP"
     },
     {
         "id": 8,
         "name" : "Mew Shiny Full Art",
         "price": 223.76,
         "pokemon": "Mew",
-        "image": "img/mewshiny.jpg"
+        "image": "img/mewshiny.jpg",
+        "set": "Scarlet & Violet—151",
+        "type": "Psychic",
+        "weakness": "Bug, Dark, and Ghost-type",
+        "health": "180HP"
     },
     {
         "id": 9,
         "name" : "Pikachu and Friends",
         "price": 183.27,
         "pokemon": "Pikachu",
-        "image": "img/pikachu2.jpg"
+        "image": "img/pikachu2.jpg",
+        "set": "Scarlet & Violet-Paldean Fates",
+        "type": "Electric",
+        "weakness": "Ground-type",
+        "health": "60HP"
     },
     {
         "id": 10,
         "name" : "Pikachu Alt Art",
         "price": 358.00,
         "pokemon": "Pikachu",
-        "image": "img/pikacity.jpg"
+        "image": "img/pikacity.jpg",
+        "set": "Scarlet & Violet—151",
+        "type": "Electric",
+        "weakness": "Ground-type",
+        "health": "60HP"
     },
 ]
 
@@ -101,6 +142,9 @@ def login_view(request):
 
 def create_view(request):
     return render(request, 'pages/create.html')
+
+def cart_view(request):
+    return render(request, 'pages/cart.html', {"card_list": DATA})
 
 class UserLogin(LoginView):
     template_name = 'pages/login.html'
