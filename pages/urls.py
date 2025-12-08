@@ -12,4 +12,5 @@ urlpatterns = [
     path('login/', views.UserLogin.as_view(), name="login"),
     path('create/', views.UserSignup.as_view(), name="create"),
     path('cart/', views.cart_view, name="cart"),
+    path('add_to_cart/<int:pk>', views.add_to_cart, name="add_to_cart"),
 ]

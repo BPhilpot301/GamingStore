@@ -19,7 +19,7 @@ Welcome
 
         {% for card in card_list %}
         <div class="card" style="width: 18rem;">
-            <img src="{% static card.image %}" class="card-img-top" alt="special delivery">
+            <img src="{{ card.image.url }}" class="card-img-top" alt="special delivery">
             <div class="card-body">
                 <h4 class="card-title">{{card.name}}</h4>
                 <h4 class="card-text">Market price - ${{card.price}}</h4>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -19,3 +20,16 @@ class Card(models.Model):
     def __str__(self):
         return self.title
 
+
+class Cart(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    total = models.DecimalField(max_digits=12, decimal_places=2)
+    status = models.CharField(max_length=50)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+
+class CartItem(models.Model):
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    card = models.ForeignKey(Card, on_delete=models.CASCADE)
+    created_on = models.DateTimeField(auto_now_add=True)
+    

@@ -92,16 +92,14 @@ Details
 
     <section class="card-grid">
 
-        {% for card in card_list %}
-        <div class="card" style="width: 18rem;">
-            <img src="{% static card.image %}" class="card-img-top" alt="special delivery">
-            <div class="card-body">
-                <h4 class="card-title">{{card.name}}</h4>
-                <h4 class="card-text">Market price - ${{card.price}}</h4>
-                <a href="{% url 'details' card.id %}" class="btn btn-primary">More Info</a>
-            </div>
-        </div>    
-        {% endfor %}
+        
+    <div class="card" style="width: 20rem;">
+        <img src="{{card.image.url }}" class="card-img-top" alt="Pokemon Card">
+        <div class="card-body">
+            <h4 class="card-title">{{card.name}}</h4>
+            <a href="{% url 'add_to_cart' card.id %}" class="btn btn-primary">Add to cart!</a>
+        </div>
+    </div>    
 
 </section>
 

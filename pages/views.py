@@ -8,125 +8,13 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
 from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView, ListView
+from catalog.models import Card, Cart, CartItem
 
-
-DATA = [
-    {
-        "id": 1,
-        "name" : "Special Delivery Charizard",
-        "price": 135.28,
-        "pokemon": "Charizard",
-        "image": "img/Charizard.jpg",
-        "set": "Sword & Shield Promo Cards",
-        "type": "Fire, Flying",
-        "weakness": "Rock, Water, and Electric types",
-        "health": "160HP"
-        
-    },
-     {
-        "id": 2,
-        "name" : "Lt. Surge",
-        "price": 3.83,
-        "pokemon": "Lt. Surge",
-        "image": "img/Brock.jpg",
-        "set": "Gym Heros",
-        "type": "Trainer",
-        "weakness": "None",
-        "health": "0HP"
-    },
-     {
-        "id": 3,
-        "name" : "Mew Alt Art",
-        "price": 135.58,
-        "pokemon": "Mew",
-        "image": "img/mew.jpg",
-        "set": "Scarlet & Violet—151",
-        "type": "Psychic",
-        "weakness": "Bug, Dark, and Ghost-type",
-        "health": "180HP"
-    },
-    {
-        "id": 4,
-        "name" : "Mew Full Art",
-        "price": 133.55,
-        "pokemon": "Mew",
-        "image": "img/mewfull.jpg",
-        "set": "Scarlet & Violet—151",
-        "type": "Psychic",
-        "weakness": "Bug, Dark, and Ghost-type",
-        "health": "180HP"
-    },
-    {
-        "id": 5,
-        "name" : "Ninetales",
-        "price": 114.40,
-        "pokemon": "Ninetales",
-        "image": "img/ninetales.jpg",
-        "set": "Japanese Base Set",
-        "type": "Fire",
-        "weakness": "Rock, Water, and Ground types",
-        "health": "60HP"
-    },
-    {
-        "id": 6,
-        "name" : "Mewtwo",
-        "price": 244.85,
-        "pokemon": "Mewtwo",
-        "image": "img/mewtwoJP.jpg",
-        "set": "Sword & Shield Promo Cards",
-        "type": "Psychic",
-        "weakness": "Bug, Dark, and Ghost-type",
-        "health": "170HP"
-    },
-    {
-        "id": 7,
-        "name" : "Mew Gold Full Art",
-        "price": 142.97,
-        "pokemon": "Mew",
-        "image": "img/mewgold.jpg",
-        "set": "Scarlet & Violet—151",
-        "type": "Psychic",
-        "weakness": "Bug, Dark, and Ghost-type",
-        "health": "180HP"
-    },
-    {
-        "id": 8,
-        "name" : "Mew Shiny Full Art",
-        "price": 223.76,
-        "pokemon": "Mew",
-        "image": "img/mewshiny.jpg",
-        "set": "Scarlet & Violet—151",
-        "type": "Psychic",
-        "weakness": "Bug, Dark, and Ghost-type",
-        "health": "180HP"
-    },
-    {
-        "id": 9,
-        "name" : "Pikachu and Friends",
-        "price": 183.27,
-        "pokemon": "Pikachu",
-        "image": "img/pikachu2.jpg",
-        "set": "Scarlet & Violet-Paldean Fates",
-        "type": "Electric",
-        "weakness": "Ground-type",
-        "health": "60HP"
-    },
-    {
-        "id": 10,
-        "name" : "Pikachu Alt Art",
-        "price": 358.00,
-        "pokemon": "Pikachu",
-        "image": "img/pikacity.jpg",
-        "set": "Scarlet & Violet—151",
-        "type": "Electric",
-        "weakness": "Ground-type",
-        "health": "60HP"
-    },
-]
 
 # Create your views here.
-def home_view(request):
-    return render(request, 'pages/home.html', {"card_list": DATA})
+def home_view(request): 
+    all_cards = Card.objects.all()
+    return render(request, 'pages/home.html', {"card_list": all_cards})
 
 def about_view(request):
     return render(request, 'pages/about.html')
@@ -144,7 +32,12 @@ def create_view(request):
     return render(request, 'pages/create.html')
 
 def cart_view(request):
-    return render(request, 'pages/cart.html', {"card_list": DATA})
+    cart = Cart.objects.filter(user = request.user)
+    return render(request, 'pages/cart.html', {"cart": cart})
+
+
+
+
 
 class UserLogin(LoginView):
     template_name = 'pages/login.html'
@@ -220,19 +113,54 @@ def contact_view(request):
         form = ContactForm()
         return render(request, 'pages/contact.html', {'form':form})
     
-def details_view(request, pk):    
-    selected_card = {}
-    for card in DATA:
-        if card["id"] == pk:
-            # found the one
-            selected_card = card
-            break # stop looking
+
+
+
+
+def details_view(request, pk):        
+    card = Card.objects.get(id=pk)
+
 
     # Get pokemon from the api here
-    info = _get_pokemon_info(card["pokemon"])
+    info = _get_pokemon_info(card.pokemon)
 
-    return render(request, 'pages/details.html', {"card": selected_card, "info": info})
+    return render(request, 'pages/details.html', {"card": card, "info": info})
 
+
+
+def add_to_cart(request, pk):
+    card = Card.objects.get(id=pk)
+    user = request.user
+
+    cart, created = Cart.objects.get_or_create(user=user)
+
+    cart_item, item_created = CartItem.objects.get_or_create(
+        cart=cart,
+        card=card
+    )
+
+    if not item_created:
+        cart_item.quantity += 1
+
+    cart_item.save()
+
+    return redirect("cart_page")
+
+    """
+    check if there is a cart for the user
+    if not: create one
+    if exist get it
+
+    produce a cart object
+
+    create a new CartItem
+    pass:
+        cart
+        cart
+    save the cart item
+
+    redirect the user to your new Cart page
+    """
 
 
 def _get_pokemon_info(name):

@@ -62,3 +62,6 @@ LoginView    = LogIn
 Add to base html
 <a class="nav-link" href="{% url 'login' %}">Log In</a>
 <a class="nav-link" href="{% url 'account' %}">Create Account</a>
+
+
+Standard Pokémon Card size, 2.5 inches wide by 3.5 inches tall (63.5 mm by 88.9 mm). The thickness typically ranges from 0.01 to 0.03 inches.
