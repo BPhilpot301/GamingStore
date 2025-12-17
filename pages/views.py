@@ -6,9 +6,13 @@ import requests
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
+from django.shortcuts import redirect, get_object_or_404
+from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView, ListView
 from catalog.models import Card, Cart, CartItem
+from django.shortcuts import redirect, get_object_or_404
 
 
 # Create your views here.
@@ -144,7 +148,42 @@ def add_to_cart(request, pk):
 
     cart_item.save()
 
-    return redirect("cart_page")
+    return redirect("cart")
+
+
+def cart_view(request):
+    cart = request.session.get('cart',[])
+    cards = Card.objects.filter(id__in=cart)
+    return render(request, 'pages/cart.html',{'cards': cards})
+
+
+def _recalc_cart_total(cart):
+    cart.total = sum(item.card.price * item.quantity for item in cart.cartitem_set.all())
+    cart.save()
+
+@login_required
+@require_POST
+def cart_item_increase(request, item_id):
+    cart_item = get_object_or_404(CartItem, id=item_id, cart__user=request.user, cart__status="open")
+    cart_item.quantity += 1
+    cart_item.save()
+    _recalc_cart_total(cart_item.cart)
+    return redirect("cart")
+
+@login_required
+@require_POST
+def cart_item_decrease(request, item_id):
+    cart_item = get_object_or_404(CartItem, id=item_id, cart__user=request.user, cart__status="open")
+
+    if cart_item.quantity > 1:
+        cart_item.quantity -= 1
+        cart_item.save()
+    else:
+        cart_item.delete()
+
+    _recalc_cart_total(cart_item.cart)
+    return redirect("cart")
+
 
     """
     check if there is a cart for the user
@@ -174,5 +213,8 @@ def _get_pokemon_info(name):
     else:
         print(f"Error {response.status_code}")
         print(response.text)
+
+
+
 
 

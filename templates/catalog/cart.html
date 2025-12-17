@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="cart-page">
+
+  {% if items %}
+    <div class="cart-items">
+      {% for item in items %}
+        <div class="cart-item">
+          <div class="cart-img">
+            {% if item.card.image %}
+              <img src="{{ item.card.image.url }}" alt="{{ item.card.title }}">
+            {% endif %}
+          </div>
+
+          <div class="cart-info">
+            <h3>{{ item.card.title }}</h3>
+            <p class="price">${{ item.card.price }}</p>
+
+            {% if item.quantity %}
+              <div class="qty-controls">
+                <form method="POST" action="{% url 'cart_item_decrease' item.id %}">
+                  {% csrf_token %}
+                  <button class="qty-btn" type="submit">-</button>
+                </form>
+
+                <span class="qty-number">{{ item.quantity }}</span>
+
+                <form method="POST" action="{% url 'cart_item_increase' item.id %}">
+                  {% csrf_token %}
+                  <button class="qty-btn" type="submit">+</button>
+                </form>
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="cart-subtotal">
+            {% if item.quantity %}
+              <p>{{ item.quantity }} x ${{ item.card.price|floatformat:2 }}</p>
+            {% else %}
+              <p>${{ item.card.price }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="cart-summary">
+      <h2>Total: ${{ cart.total }}</h2>
+
+      <div class="cart-actions">
+        <a href="{% url 'home' %}" class="btn-secondary">
+          Continue Shopping
+        </a>
+
+        <a href="#" class="btn-checkout">
+          Checkout
+        </a>
+      </div>
+    </div>
+    {% endif %}
+{% endblock %}

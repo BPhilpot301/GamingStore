@@ -16,6 +16,12 @@
         <a class="nav-link" href="{% url 'contact' %}">Contact</a>
         <a class="nav-link" href="{% url 'login' %}">Log In</a>
         <a class="nav-link" href="{% url 'create' %}">Create Account</a>
+        <a class="nav-link nav-cart" href="{% url 'cart' %}">
+          Cart
+        {% if cart_item_count %}
+        <span class="cart-badge">{{ cart_item_count }}</span>
+        {% endif %}
+      </a>
         
 
       </div>

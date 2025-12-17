@@ -97,7 +97,10 @@ Details
         <img src="{{card.image.url }}" class="card-img-top" alt="Pokemon Card">
         <div class="card-body">
             <h4 class="card-title">{{card.name}}</h4>
-            <a href="{% url 'add_to_cart' card.id %}" class="btn btn-primary">Add to cart!</a>
+            <form method="POST" action="{% url 'add_to_cart' card.id %}">
+                {% csrf_token %}
+                <button type="submit">Add to cart!</button>
+            </form>
         </div>
     </div>    
 

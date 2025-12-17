@@ -28,8 +28,13 @@ My Cards
             <p>{{record.created_on}}</p>
             
             <p>{{record.pokemon}}</p>
+
+            <p>${{record.price}}</p>
             
-            <button>View Details</button>
+            <form method="POST" action="{% url 'add_to_cart' card.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Add to cart!</button>
+            </form>
         </div>
         {% endfor %}
     </div>

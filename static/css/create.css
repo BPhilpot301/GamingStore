@@ -28,7 +28,7 @@ textarea{
     max-width: 550px;
     margin: 60px auto;
     padding: 40px;
-    background-image: url(../img/contact5.jpg);
+    background-image: url("../img/joinus2.png");
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     color: #ffffff;
@@ -112,7 +112,3 @@ textarea{
 .contact-form textarea::placeholder{
     color: #999;
 }
-
-
-
-

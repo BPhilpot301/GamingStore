@@ -2,10 +2,10 @@
     max-width: 550px;
     margin: 60px auto;
     padding: 40px;
-    background-color: rgba(53, 208, 255, 0.822);
+    background-image: url(../img/squirtle.avif);
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    color: #ffffff;
+    color: #000000;
 }
 
 /* Heading style */
